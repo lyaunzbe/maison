@@ -1,0 +1,61 @@
+body,html{
+  margin:0;
+  font-family: 'Georgia' serif;
+  color:#363636;
+  height:auto;
+  background-color:rgb(238,203,173);
+}
+
+header{
+  background-color:rgb(255, 255, 255);
+  padding-left:15px;
+  padding-right:15px;
+  padding-bottom:45px;
+}
+
+.h0{
+  font-weight:600;
+  height:auto;
+  color:rgba(51, 51, 50,0.75);
+  letter-spacing:5px;
+  
+  
+}
+
+
+.subh0{
+  font-weight:600;  
+  font-size:100px;
+  text-shadow: 3px 3px #CCEED5, -3px -3px #94A696;
+  
+}
+
+#main{
+}
+
+
+#whoami{
+  /*background-color:rgba(87,182,138,0.6);*/
+  background-color:rgb(227, 227, 225);
+  text-align:center;
+  height: 180px;
+  line-height: 180px; 
+  padding:0; 
+}
+
+#whoami a{
+  padding:10px;
+  text-decoration:none;
+  color:#363636;
+  margin-left:20px;
+  margin-right:20px;
+  font-weight:600;
+  font-style:italic;
+  opacity:.3;
+}
+
+#whoami a:hover{
+  opacity:0.8;
+  -webkit-transition:opacity .35s   ease-in;
+  background-color:silver;
+}
