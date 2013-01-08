@@ -5,7 +5,7 @@
     "benlyaunzon.com",
     "www.benlyaunzon.com"
   ],
-  "version": "0.0.0-1",
+  "version": "0.0.0-3",
   "scripts": {
     "start": "server.js"
   },
@@ -14,7 +14,6 @@
     "node": "v0.8.x"
   },
   "dependencies": {
-    "node-static": "~0.6.5",
     "union": "~0.3.6",
     "ecstatic": "~0.3.0",
     "director": "~1.1.8",

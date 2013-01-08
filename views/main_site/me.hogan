@@ -1,0 +1,20 @@
+<div id="moi">
+  <h1>Moi même</h1>
+  <div id="bio">
+    <p>
+    Hello! My name is Benjamin Lyaunzon. I am a student currently enrolled at Northeastern University in Boston where I am studying Computer Science.
+    </p>
+    <p>    
+    My goal is to push the boundaries of the frontend web, through form and function. Particularly, I enjoy making graphically compelling representations
+    of data, visual storytelling on the web and building intelligent, interactive user expereinces.
+    </p>
+    <p>    
+    I also really like art, films, racquet sports and running.
+    </p>
+    <p>
+    If you have any questions or just want to chat: <a href="mailto:lyaunzon.b@gmail.com">lyaunzon.b@gmail.com</a>.
+    </p>
+  </div>
+</div>
+
+

@@ -23,34 +23,12 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div id="social">
-          <ul>
-            <li>
-              <a href="#"><img src="../img/github.svg" alt="" /></a>
-            </li><li>
-              <a href="#"><img src="../img/twitter.svg" alt="" /></a>
-            </li><li>
-              <a href="#"><img src="../img/mail.svg" alt="" /></a>
-            </li>
-          </ul>
+        <div id="whoami">
+            <a id="lab" href="#">Lab</a> // <a id="blog" href="/blog">Blog</a> // <a id="colo_a" href="/me">Colophon</a> 
         </div>
-        <header>
-          <div class="h0">
-            Ben <span class="f1"></span> <br> Lyaunzon 
-          </div>
-          <div class="subh0">
-            Humble beginnings.
-          </div>
-          
-        </header>
         <div id="main">
-          <div id="whoami">
-            <a id="lab" href="/lab">Lab</a> // <a id="blog" href="/blog">Blog</a> // <a id="colo_a" href="/me">Colophon</a> 
-          </div>
-        </div>
-
-        <div style="display:none;" id="colophon">
-          <h1>Colophon</h1>
+          {{> me}}
+          {{> lab}}
         </div>
         <footer>
           <a href= "/"> <img src="../img/planet.svg"/> </a>
@@ -61,3 +39,4 @@
         <script src="js/wizards.js"></script>       
         </body>
 </html>
+

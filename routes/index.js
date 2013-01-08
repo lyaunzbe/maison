@@ -26,18 +26,31 @@ function singlePost(year, month, postID, req, res){
 
     }
   });
-  //util.md2html(postID, function(err, html){
-    //util.partialize('blog', {singlePost:{post:html}},'single', 
-                  //function(err,output){
-                    //if(err){
-                      //console.log(err);
-                    //}else{
-                      //that.res.writeHead(200, { 'content-type': 'text/html' });
-                      //that.res.end(output);
-                    //}});
-  //});
+ }
+
+function me(){
+  var that = this;
+  util.mainPage('me', function(err, output){
+    if(err){
+      console.log(err);
+    }else{
+      that.res.writeHead(200, { 'content-type': 'text/html' });
+      that.res.end(output);
+    }
+  });
 }
 
+function lab(){
+  var that = this;
+  util.mainPage('lab', function(err, output){
+    if(err){
+      console.log(err);
+    }else{
+      that.res.writeHead(200, { 'content-type': 'text/html' });
+      that.res.end(output);
+    }
+  });
+}
 
 var routes = {
   '/blog':{
@@ -51,6 +64,12 @@ var routes = {
         }
       }
      }
+  },
+  '/me':{
+    get: me
+  },
+  '/lab':{
+    get: lab
   }
 };
 

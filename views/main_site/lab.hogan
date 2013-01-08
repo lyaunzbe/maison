@@ -1,0 +1,32 @@
+<ul id="project_list">
+  <li>
+    <a href="http://www.github.com/lyaunzbe/maison"><h2>Maison</h2></a>
+    <span class="date">Jan. 2013</span>
+    <p>The application that runs this site and its blog. Using several modules from the node 
+    Flatiron framework, the app runs a small static web server and a basic, custom markdown
+    blogging system.</p>
+  </li>
+  <li>
+    <a href="http://www.github.com/lyaunzbe/derrida"><h2>Derrida</h2></a>
+    <span class="date">November - December 2012</span>
+    <p>A school art project. Explores the deconstruction and abstraction of classical art
+    by applying modernist techniques through computer manipulation/visualization. Runs on
+    a node static web server and uses BonsaiJS, a javascript graphics library, as an svg
+    render.</p>
+  </li>
+  <li>
+    <a href="http://www.github.com/lyaunzbe/bangalter"><h2>Bangalter</h2></a>
+    <span class="date">Ongoing</span>
+    <p>A platform intended for music bloggers and musicians.
+     Integration and authentication with soundcloud,responsive design and more!</p>
+  </li>
+  <li>
+    <a href="http://www.github.com/lyaunzbe/thealist"><h2>The A List</h2></a>
+    <span class="date">August 2012</span>
+    <p>A small node app that connects to your twitter account and visualizes your
+    most influential "friends" (the people who follow you and are followed by you).
+    HTML5 Canvas API used for the visualization.</p>
+  </li>
+  <a href="http://www.github.com/lyaunzbe">More . . .</a>
+
+</ul>

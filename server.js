@@ -1,7 +1,7 @@
-var union = require('union')
-    , ecstatic = require('ecstatic')
-    , director = require('director')
-    , routes = require('./routes');
+var union = require('union'),
+    ecstatic = require('ecstatic'),
+    director = require('director'),
+    routes = require('./routes');
 
 var router = new director.http.Router(routes);
 

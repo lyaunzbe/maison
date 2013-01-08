@@ -13,8 +13,12 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!--<link rel="stylesheet" href="css/normalize.css">-->
-        <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="/css/skeleton.css">                 
+        <link rel="stylesheet" href="/css/base.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        
         <!--<script src="js/vendor/modernizr-2.6.2.min.js"></script>-->
     </head>
     <body>
@@ -23,18 +27,25 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <header>
-          <div class="h0">
-            Ben <br> Lyaunzon 
+        <div class="container">
+          
+          <header>
+            <div class="" id="logo">
+              <div id="b">B</div><div id="l">L</div>
+            </div>
+            <nav class="">
+              <ul>
+                <li>Home</li>
+                <li>Index</li>
+                <li>Archive</li>
+              </ul>
+            </nav>
+          </header>
+          <div id="main">
+            {{#singlePost}}
+              {{>single}}
+            {{/singlePost}} 
           </div>
-          <div class="subh0">
-          </div>
-
-        </header>
-        <div id="main">
-          {{#singlePost}}
-            {{>single}}
-          {{/singlePost}} 
         </div>
       </body>
 </html>

@@ -27,9 +27,11 @@ var partialize = function(viewDir,context, partial,callback){
           if(err){
             callback(err);
           }else{
-            var p = {single:dataPartial.toString()};
+            var p = {};
+            p[partial] = dataPartial.toString();
             var output = template.render(context,p);
             callback(null,output);
+            
           }
         });
       }
@@ -97,3 +99,15 @@ var indexPage = function(limit, offset, callback){
 
 exports.indexPage = indexPage;
 
+
+var mainPage = function(page, callback){
+  partialize('main_site',null,page, function(err, output){
+    if(err){
+      callback(err);
+    }else{
+      callback(null,output);
+    }
+  });
+};
+
+exports.mainPage = mainPage;

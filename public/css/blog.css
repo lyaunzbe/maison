@@ -1,0 +1,68 @@
+#logo{
+  width:135px;
+  height:125px;
+  text-align:center;
+  border:10px #353839  solid;
+  /*border-radius:100px;*/
+  font-family: 'Arvo', serif;
+  font-weight:600;
+  font-size:70px;
+  display:inline-block;
+  margin-top:-10px;
+}
+
+#b, #l{
+  color:#353839;
+  display:inline-block;
+  margin-top:55px;
+}
+
+#b{
+  /*margin-top:5px;*/
+  /*margin-left:-25px;*/
+}
+#l{
+  /*margin-top: -43.5px;*/
+  margin-left: 0px;
+  /*font-size: 68px;*/
+}
+
+
+#logo:hover{
+
+}
+
+header{
+  border-bottom: 10px #353839 solid;
+  border-top: 10px #353839 solid;
+  border-right: 10px #353839 solid;
+  height: 125px;
+}
+
+header nav ul{
+  list-style:none;
+  height:100%;
+  margin-bottom:none;
+}
+header nav{
+  color:#353839;  
+  display: inline-block;
+  vertical-align: top;
+  height: 145px;
+}
+header nav ul li{
+  display: inline-block;
+  margin-top: 42px;
+  font-size: 30px;
+  font-weight: 600;
+  margin-left: 77px;
+  margin-right: 77px;
+  margin-bottom: 0px;
+  line-height: 42px;
+  text-transform: uppercase;
+}
+
+header nav ul li:hover{
+  text-decoration:none;
+  border-bottom:8px #353535 solid;
+}
