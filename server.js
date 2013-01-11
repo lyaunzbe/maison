@@ -1,9 +1,17 @@
 var union = require('union'),
     ecstatic = require('ecstatic'),
     director = require('director'),
-    routes = require('./routes');
+    routes = require('./routes'),
+    util = require('./utils');
 
+util.postCache(function(err, body){
+  console.log(body);
+});
 var router = new director.http.Router(routes);
+
+router.attach(function () {
+    this.page_cache = [];
+});
 
 var server = union.createServer({
   before: [

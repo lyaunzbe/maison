@@ -5,7 +5,7 @@
     "benlyaunzon.com",
     "www.benlyaunzon.com"
   ],
-  "version": "0.0.0-3",
+  "version": "0.0.0-4",
   "scripts": {
     "start": "server.js"
   },
@@ -18,8 +18,7 @@
     "ecstatic": "~0.3.0",
     "director": "~1.1.8",
     "hogan.js": "~2.0.0",
-    "node-markdown": "~0.1.1",
-    "findit": "~0.1.2"
+    "marked": "~0.2.7"
   },
   "subdomain": "lyaunzbe.maison"
 }

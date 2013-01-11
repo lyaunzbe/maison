@@ -1,9 +1,14 @@
 var Hogan = require('hogan.js'),
     fs = require('fs'),
     path = require('path'),
-    md = require('node-markdown').Markdown;
+    md = require('marked');
 
-var findit = require('findit');
+md.setOptions({
+  gfm: true,
+  pedantic: false,
+  sanitize: true
+ });
+
 
 var viewBaseDir = path.resolve(__dirname,'../views');
 
@@ -31,7 +36,6 @@ var partialize = function(viewDir,context, partial,callback){
             p[partial] = dataPartial.toString();
             var output = template.render(context,p);
             callback(null,output);
-            
           }
         });
       }
@@ -56,48 +60,68 @@ var md2html = function(path, callback){
 
 exports.md2html = md2html;
 
-var singlePost = function(post, callback){
+var postCache = function(callback){
 
-  var path = postsBaseDir + '/' +
-             post.year    + '/' +
-             post.month   + '/' +
-             post.id      + '.md' ;
+  var post_cache = {};
+  var toc= [];
 
-  md2html(path, function(err, html){
-    if(err){
-      callback(err);
+  var filenames = fs.readdirSync(postsBaseDir);
+  for (var i = 0, l = filenames.length; i<l; i++) {
+    if(path.extname(filenames[i]) !== '.md' ){
+      filenames.splice(i,i+1);
     }else{
-      partialize('blog', {singlePost:{post:html}}, 'single', function(err,output){
-        if(err){
-          callback(err);
-        }else{
-          callback(null, output);
-        }
-      });
+      filenames[i] = path.basename(filenames[i], '.md');
     }
+  }
+
+  filenames.sort(function(date1,date2){
+    date1 = new Date(Date.parse(date1));
+    date2 = new Date(Date.parse(date2));
+
+    if (date1 > date2) return -1;
+    else if (date1 < date2) return 1;
+
+    return 0;
+  }).forEach(function(file){
+    var date = file,
+        id = '',
+        title = '';
+    
+    var currentID;
+    var currentTitle;
+
+    file = path.join(postsBaseDir,file);
+    
+    var data = fs.readFileSync(file);
+    //var markup = marked(data);
+    //console.log(markup);
+    var output = md(data.toString()).replace(/<h1>(.*?)<\/h1>/, function(a, h1){
+       // turn the title into something that we can use as a link.
+      id = h1.replace(/[^a-zA-Z0-9_\-]/g, '-');
+
+      // add a link to the article to the table of contents.
+      toc.push('<div><a href="' + id + '">' + h1 +
+      '</a><span class="date">' + date + '</span></div>');
+
+      //
+      // First header
+      //
+      if(!currentID) {
+        currentID = id;
+        currentTitle = title;
+      }
+
+      // return the new version of the header.
+      return '<a id="' + id + '"><h1><a href="#' + id + '">' + h1 +
+        '</a></h1>';    
+    });
+    console.log(toc);
   });
 
+  callback(null, filenames);
 };
 
-exports.singlePost = singlePost;
-
-var yearArchive = function(year, callback){
-
-};
-
-exports.yearArchive = yearArchive;
-
-var monthArchive = function(month, callback){
-
-};
-
-exports.monthArchive = monthArchive;
-
-var indexPage = function(limit, offset, callback){
-  
-};
-
-exports.indexPage = indexPage;
+exports.postCache = postCache;
 
 
 var mainPage = function(page, callback){
