@@ -13,40 +13,49 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!--<link rel="stylesheet" href="css/normalize.css">-->
-        <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-
+        <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/css/skeleton.css">                 
         <link rel="stylesheet" href="/css/base.css">
-        <link rel="stylesheet" href="/css/blog.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/hci.css">
         
         <!--<script src="js/vendor/modernizr-2.6.2.min.js"></script>-->
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-        <div class="container">
-          
-          <header>
-            <div class="" id="logo">
-              <div id="b">B</div><div id="l">L</div>
-            </div>
-            <nav class="">
-              <ul>
-                <li>Home</li>
-                <li>Index</li>
-                <li>Archive</li>
-              </ul>
-            </nav>
-          </header>
-          <div id="main">
-            {{#post}}
-              {{> single}}
-             {{/post}} 
-          </div>
+            <![endif]-->
+      <header>
+        <div id="logo">
+          <a href="/hci">HCI</a>
         </div>
-      </body>
+        <nav>
+          <ul>
+            <li>
+              <a href="/hci/readings">Readings</a>
+            </li><li>
+              <a href="/hci/homework">Homework</a>
+            </li><li>
+              <a href="/hci/projects">Projects</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div id="main">
+        {{>me}}
+        {{#post}}
+          {{>single}}
+        {{/post}}
+        <div id="toc">
+        {{#indexPage}}
+            {{>index}}
+        {{/indexPage}}
+        </div>
+        
+      </div>
+      
+      <!-- Add your site or application content here -->
+      <script src="js/wizards.js"></script>       
+    </body>
 </html>
 

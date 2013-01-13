@@ -1,0 +1,120 @@
+header{
+  padding:0px;
+  background-color:rgba(36,36,36,0.2);
+}
+#logo{
+  margin-top:43px;
+  color:white;
+  font-size:55px;
+  font-weight:600;
+  letter-spacing:5px;
+  display:inline-block;
+  margin-left:25px;
+
+}
+#logo a{
+  color:white;
+  text-decoration:none;
+}
+#logo:hover{
+  text-decoration:underline;
+}
+
+nav{
+  text-shadow:silver 1px 0px 0px;
+  vertical-align:top;
+  margin-top:30px;
+  margin-left:25px;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+}
+
+nav a:visited{
+  color:white;
+}
+
+nav a:hover{
+  color:white;
+}
+
+nav, nav ul, nav ul li{
+  display:inline-block;
+}
+
+nav ul li{
+  margin-left:25px;
+  margin-right:25px;
+  font-size:20px;
+  padding:15px;
+}
+
+nav ul li:hover{
+  background-color:rgba(36,36,36,0.4);
+}
+
+
+
+article{
+  margin:0 auto;
+  margin-top:25px;
+  width:900px;
+}
+
+article p{
+  text-align:justify;
+  font-size:18px;
+  line-height:25px;
+}
+
+article a{
+  text-decoration:none;
+}
+
+article a:hover{
+  text-decoration:underline;
+  opacity:0.5;
+}
+
+article h1{
+  margin-bottom:30px;
+}
+
+#toc{
+  margin:0 auto;
+  margin-top:30px;
+  width:600px;
+  text-align:center;
+}
+
+#toc h1{
+  margin-bottom:40px;
+}
+
+#toc .toc_link{
+  display:block;
+  height:15px;
+  font-size:20px;
+  border-bottom:2px dotted rgb(190, 190, 190);
+  margin-bottom:20px;
+}
+
+.toc_link a{
+  float:left;
+  font-style:italic;
+  text-decoration:none;
+  background-color:white;
+  padding-right:5px;
+}
+
+.toc_link a:hover{
+  text-decoration:underline;
+}
+
+.toc_link .date{
+  padding-left:5px;  
+  background-color:white;  
+  float:right;
+}
+

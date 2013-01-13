@@ -1,0 +1,7 @@
+<h1> {{page}}</h1>
+{{#toc}}
+  {{{link}}}
+{{/toc}}
+{{^toc}}
+  Nothing to see here...yet
+{{/toc}}

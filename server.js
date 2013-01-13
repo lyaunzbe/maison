@@ -4,13 +4,13 @@ var union = require('union'),
     routes = require('./routes'),
     util = require('./utils');
 
-util.postCache(function(err, body){
-  console.log(body);
-});
+
 var router = new director.http.Router(routes);
 
-router.attach(function () {
-    this.page_cache = [];
+util.postCache(function(err, body){
+  router.attach(function () {
+    this.body = body;
+  });
 });
 
 var server = union.createServer({
