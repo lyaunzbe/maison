@@ -34,7 +34,6 @@ function hciPost(postID,req,res){
 
 function rIndex(req,res){
   var that = this;
-  console.log(this.body.hci.toc['readings']);
   context = {indexPage : {
     toc: this.body.hci.toc['readings'],
     page: 'Readings'
@@ -60,9 +59,10 @@ function pIndex(req,res){
 function hIndex(req,res){
   var that = this;
   context = {indexPage : {
-    toc: this.body.hci.toc['homeworks'],
-    page: 'Homeworks'
+    toc: this.body.hci.toc['homework'],
+    page: 'Homework'
   }};
+  console.log(context);
   util.partialize('hci',context , 'index', function(err, output){
     that.res.writeHead(200, { 'content-type': 'text/html' });
     that.res.end(output);

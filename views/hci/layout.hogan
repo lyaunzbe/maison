@@ -31,13 +31,13 @@
         </div>
         <nav>
           <ul>
-            <li>
-              <a href="/hci/readings">Readings</a>
-            </li><li>
-              <a href="/hci/homework">Homework</a>
-            </li><li>
-              <a href="/hci/projects">Projects</a>
-            </li>
+            <a href="/hci/readings"><li>
+              Readings
+            </li></a><a href="/hci/homework"><li>
+              Homework
+            </li></a><a href="/hci/projects"><li>
+              Projects
+            </li></a>
           </ul>
         </nav>
       </header>
