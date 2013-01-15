@@ -53,6 +53,9 @@
         </div>
         
       </div>
+      <footer>
+        <a href= "/"> <img src="../img/planet.svg"/> </a>
+      </footer>
       
       <!-- Add your site or application content here -->
       <script src="js/wizards.js"></script>       
