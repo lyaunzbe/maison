@@ -1,0 +1,9 @@
+{{#toc}}
+  {{{link}}}
+{{/toc}}
+{{#post}}
+  <article>{{{post}}}</article>
+{{/post}}
+{{^toc}}
+  Nothing to see here...yet
+{{/toc}}

@@ -6,7 +6,6 @@ var Hogan = require('hogan.js'),
 md.setOptions({
   gfm: true,
   pedantic: false,
-  sanitize: true
  });
 
 
@@ -50,9 +49,14 @@ var hciDir = path.resolve(__dirname,'../hci');
 
 var postCache = function(callback){
 
-  var page_cache = {};
-  var title_cache = [];
+  var blog = {};
+  blog.page_cache = {};
+  blog.title_cache = [];
+  var hci = {};  
+  hci.page_cache = {};
+  hci.title_cache = [];  
   var blog_toc= [];
+  var index_content = [];
   var hci_toc = {
     homework: [],
     readings: [],
@@ -60,13 +64,13 @@ var postCache = function(callback){
   };
 
   var filenames = fs.readdirSync(postsBaseDir);
-  var hci = fs.readdirSync(hciDir);
+  var hciFS = fs.readdirSync(hciDir);
 
   var hciFiles = {};
 
-  for (var y = 0, v = hci.length; y<v; y++){
-    if(hci[y] !== '.DS_Store')
-      hciFiles[hci[y]]= fs.readdirSync(hciDir + '/' + hci[y]);
+  for (var y = 0, v = hciFS.length; y<v; y++){
+    if(hciFS[y] !== '.DS_Store')
+      hciFiles[hciFS[y]]= fs.readdirSync(hciDir + '/' + hciFS[y]);
   }
   
   for (var i = 0; i< filenames.length; i++) {
@@ -98,15 +102,15 @@ var postCache = function(callback){
     file = path.join(postsBaseDir,file);
     var data = fs.readFileSync(file +'.md');
     //var markup = marked(data);
-    //console.log(markup);
+    //console.log(markup);)
     var markup = md(data.toString()).replace(/<h1>(.*?)<\/h1>/, function(a, h1){
       title = h1;
        // turn the title into something that we can use as a link.
       id = h1.replace(/[^a-zA-Z0-9_\-]/g, '-');
 
       // add a link to the article to the table of contents.
-      blog_toc.push('<div><a href="' + id + '">' + h1 +
-      '</a><span class="date">' + date + '</span></div>');
+      blog_toc.push({'link':'<div class="head_link" id="'+id+'"><a href="/blog/' + id + '">' + h1 +
+      '</a><span class="date">' + date + '</span></div>'});
 
       //
       // First header
@@ -120,17 +124,18 @@ var postCache = function(callback){
       return '<a id="' + id + '"><h1><a href="#' + id + '">' + h1 +
         '</a></h1>';    
     });
-
+    console.log(markup);
+    index_content.push({date:date, post:markup.replace(/<a ?.*>(.*)<\/h1>/,'  ')});
     if(currentID) {
       console.log('generated: '+ currentID);
       partialize('blog',{post: markup},'single', function(err,output){
-        page_cache[currentID] = output;
-        title_cache[currentID] = title;
+        blog.page_cache[currentID] = output;
+        blog.title_cache[currentID] = title;
         body.blog ={};
-        body.blog.page_cache = page_cache;
-        body.blog.title_cache = title_cache;
+        body.blog.page_cache = blog.page_cache;
+        body.blog.title_cache = blog.title_cache;
         body.blog.toc = blog_toc;
-        
+        body.blog.index_content = index_content;
       });
     }
   });
@@ -155,11 +160,10 @@ var postCache = function(callback){
           title = '';
       var currentID;
       var currentTitle;
-    
+
       file = path.join(hciDir,key,file);
       var data = fs.readFileSync(file);
-      //var markup = marked(data);
-      //console.log(markup);
+
       var markup = md(data.toString()).replace(/<h1>(.*?)<\/h1>/, function(a, h1){
         title = h1;
          // turn the title into something that we can use as a link.
@@ -179,17 +183,17 @@ var postCache = function(callback){
 
         // return the new version of the header.
         return '<a id="' + id + '"><h1><a href="#' + id + '">' + h1 +
-          '</a></h1>';    
+          '</a></h1>';
       });
 
       if(currentID) {
         console.log('generated: '+ currentID);
         partialize('hci',{post: markup},'single', function(err,output){
-          page_cache[currentID] = output;
-          title_cache[currentID] = title;
+          hci.page_cache[currentID] = output;
+          hci.title_cache[currentID] = title;
           body.hci ={};
-          body.hci.page_cache = page_cache;
-          body.hci.title_cache = title_cache;
+          body.hci.page_cache = hci.page_cache;
+          body.hci.title_cache = hci.title_cache;
           body.hci.toc = hci_toc;
           callback(null,body);
         });

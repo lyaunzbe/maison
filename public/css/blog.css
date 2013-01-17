@@ -11,6 +11,12 @@
   margin-top:-10px;
 }
 
+a, a:visited{
+  color:rgb(51, 51, 51);
+  outline:none;
+  text-decoration:none;
+}
+
 #b, #l{
   color:#353839;
   display:inline-block;
@@ -65,4 +71,47 @@ header nav ul li{
 header nav ul li:hover{
   text-decoration:none;
   border-bottom:8px #353535 solid;
+}
+
+#toc .head_link{
+  text-align:center;
+  margin-top:40px;
+}
+
+#toc .head_link a{
+  display:block;
+  font-size:50px;
+  height:40px;
+}
+
+#toc .head_link a:hover{
+  text-decoration:underline;
+}
+
+#toc .head_link .date{
+  display:block;
+  font-style:italic;
+  margin-top:10px;
+  margin-bottom:15px;
+}
+
+#toc article{
+  margin:0 auto;
+  width:750px;
+  text-align:justify;
+}
+
+#toc article iframe{
+  margin: 0 auto;
+  display:block;
+}
+
+
+@media only screen and (max-width: 959px) and (min-width: 768px){
+header nav ul li{
+  font-size: 19px;
+  margin-left: 63px;
+  margin-right: 63px;
+}
+
 }

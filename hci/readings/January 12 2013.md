@@ -60,3 +60,67 @@ Norman then goes a little deeper into human psychology, explaining the seven sta
 
 I was a bit less enthusiastic about this chapter, but that was primarily because I am less interested in the psychological aspect of design. Nevertheless, I acknowledge that it is an important factor in design and, overall, I think Norman did a pretty good job explaining why and how to incorporate user psychology into proper design. This chapter also made me look at my own design process and I realized that I usually use my own psycholog as a basis for constructing interfaces. Yet, now that I think about it, this may not be ideal, since not all my users may have similar exposure and previous experience.
 
+##Norman, Chapter 3##
+
+In the third chapter of "The Design of Everyday Things", Norman focuses
+on people's behavior and how this behavior develops through internal and
+external knowledge, and cosntrians. He asserts that we don't need to store 
+the associated knowledge of a particular behavior. In fact, the distribution 
+of this knowledge, across our mind, the world, and other sources, is
+more effective.Our imprecise knowledge, can still give rise to percise
+behaviors.
+
+There are four reaons why precise behavior can arise from imprecise
+knowledge: (1) Information is the world: Much of the behaviors and
+actions we need to know are available from our own environment. 
+(2) Great percision is not required: There is no need for perfect
+accuracy. Being able to distinguish from other behaviors is enough.
+(3) Natural constraints: Often we can figure out proper behavior through
+natural and physical limitations that restricts anything but correct
+usage. (4) Cultural contstraints: This is similiar to a natural
+constraint but more specific to the geopgraphic location.
+
+Norman then delves closer into the human cognitive element. He explains
+how people use two types of knowledge: The knowledge of how (or procedural 
+knowledge) and the knowledge of facts (conceptual knowledge). We then
+explore how memory is classified and used. It is important to realize
+that memory works different for arbitrary concepts, meaningful
+relationships, and explanations. Memory of arbitrary concepts is the
+least effective method, while memory of meaningful relationships is much
+stronger and is formed from current knowledge associated with an item.
+Memories of explanations are also strong because they are formed and
+retained through a proper understanding. 
+
+I thought this chapter was quite interesting. It really is fascinating,
+yet difficult, to consider the cognitive model when designing, but I can
+definately see how important it is. I also appreciate Norman's
+explanation of tradeoffs because it is so relevant to my past
+experience, not even in design, but with building applications in
+general.
+
+##Norman, Chapter 4##
+
+The fourth chapter considers the issue of knowing how to operate a novel
+object never used before. It turns out this problem is mitigated from
+associated models, but moreso through various types of constraints and
+affordances. 
+
+Some of the most effective constraints are physical constraints, since
+they show you what operations are possible and which aren't. There are
+also cultural constraints, which similarly limit operation, but this is
+more based on geographic location and societal implications. Then we have 
+logical constraints, which we see in natural mappings, based on spatial
+relationships or even layout. Semantic constraints, on the other hand,
+rely on our knowledge of the situation and the world. An example would
+be knowing where the windshield goes on a motorcycle.
+
+Other issues discussed in this chapter include visibility and feedback,
+which prove crucial to facilitate proper use and understanding of
+actions taken. Norman makes the case that sound isn't used enough to
+provide visibility and feedback, even though it has great potential in
+this area.
+
+I enjoyed this chapter, particularly all the examples. Norman's style of
+providing explanations of terminology through conventional explanation
+and then through case-studies of specific interfaces seems to work
+really well for my understanding.

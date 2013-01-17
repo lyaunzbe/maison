@@ -3,7 +3,17 @@ var util = require('../utils'),
 
 
 
-function blogIndex(){
+function blogIndex(req, res){
+  var that = this;
+  context = {indexPage : {
+    toc: this.body.blog.toc,
+    post: this.body.blog.index_content
+  }};
+  console.log(this.body.blog.page_cache);
+  util.partialize('blog',context , 'index', function(err, output){
+    that.res.writeHead(200, { 'content-type': 'text/html' });
+    that.res.end(output);
+  });
 
 }
 
@@ -73,7 +83,6 @@ function hIndex(req,res){
 
 function singlePost(postID, req, res){
   var that = this;
-  console.log(this.body.hci);
   if(this.body.blog.page_cache[postID]){
     that.res.writeHead(200, { 'content-type': 'text/html' });
     that.res.end(this.body.blog.page_cache[postID]);
