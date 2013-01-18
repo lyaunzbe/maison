@@ -35,9 +35,9 @@
             </div>
             <nav class="">
               <ul>
-                <li>Home</li>
-                <li>Index</li>
-                <li>Archive</li>
+                <a href="/"><li>Home</li></a>
+                <a href="/blog"><li>Index</li></a>
+                <a href="/blog/archive"><li>Archive</li></a>
               </ul>
             </nav>
           </header>

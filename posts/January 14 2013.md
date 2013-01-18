@@ -5,7 +5,7 @@ introduction, I'm Ben Lyaunzon, a New York studying CS and Interactive
 Media in Boston. I like code, art, and everything x, where {x : x ∈ code ∩ art}.
 
 I've never really kept up a blog/journal, digital or otherwise, so this
-will be quite an experiment. Hopefully not a short one :)
+will be quite an experiment. Hopefully not a short one.
 
 I expect there will be some musings, rants, and lots of posts about
 current things I'm working on, solutions I encounter, etc. Possibly 
